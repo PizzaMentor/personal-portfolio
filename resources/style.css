@@ -1,0 +1,15 @@
+html {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    color: rgb(205,133,63);
+    font-family: "Handjet";
+ }
+ 
+ body {
+    margin: 0px;
+    height: 88%;
+    padding: 30px 30px;
+    overflow: hidden;
+    background-color: rgb(255,250,240);
+ }
