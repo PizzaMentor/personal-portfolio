@@ -1,0 +1,360 @@
+html {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    color: rgb(205,133,63);
+    font-family: "Handjet";
+ }
+ 
+ body {
+    margin: 0px;
+    height: 88%;
+    padding: 30px 30px;
+    overflow: hidden;
+    background-color: rgb(255,250,240);
+ }
+
+ .page {
+    height: 100%;
+}
+
+.page-contents {
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1.25fr 1.25fr 1fr;
+    grid-template-areas: 
+        "name name contact"
+        "nav cont cont";
+    padding: 10px 30px 30px 30px;
+    height: 100%;
+}
+
+.name {
+    grid-area: name;
+}
+
+.name h1 {
+    font-size: 64px;
+    margin: 0px 5px;
+    font-weight: 300;
+    font-size: 64px;
+}
+
+.name h2 {
+    font-weight: lighter;
+    font-size: 30px;
+    margin: 0px 5px;
+}
+
+.contact {
+    grid-area: contact;
+    display: grid;
+    position: relative;
+    grid-template: 50px / 80px 40px 40px;
+    justify-self: right;
+    align-self: top;
+
+}
+
+.contact-container {
+    position: relative;
+    font-size: 25px;
+    justify-self: center;
+    align-self: end;
+    z-index: 10;
+}
+
+.contact-container a {
+    color: rgb(205,133,63);
+}
+
+
+.contact h3 {
+    position: relative;
+    align-self: end;
+    margin: 0px 0px 8px 0px;
+}
+
+.contact-text {
+    position: absolute;
+    right: 68px;
+    top: 140px;
+}
+
+.e-mail {
+    font-size: 30px;
+}
+
+
+nav {
+    grid-area: nav;
+}
+
+.nav-bar {
+    list-style-type: none;
+    padding-left: 5px;
+    padding-bottom: 36px;
+    display: block;
+    align-self: center;
+}
+
+.nav-button {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 36px;
+    position: relative;
+    width: 110px;
+}
+
+.nav-button:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 0;
+    position: relative;
+    background: rgb(205,133,63);
+    transition: width 0.3s ease 0s, right 0.3s ease 0s;
+    width: 0;
+}
+
+#home-button:hover:after { 
+width: 68px; 
+right: 0; 
+}
+
+#aboutme-button:hover:after { 
+width: 110px; 
+left: 0; 
+}
+
+#projects-button:hover:after { 
+width: 90px; 
+left: 0; 
+}
+
+#skills-button:hover:after { 
+width: 64px; 
+left: 0; 
+}
+
+.nav-button:hover {
+    cursor: pointer; 
+}
+
+.content {
+    grid-area: cont;
+    position: relative;
+    overflow: auto;
+    z-index: 0;
+}
+
+.content span {
+    opacity: 0;
+    transition: all 1s ease;
+    display: inline-block;
+    transform: translateY(50px);
+}
+
+.content span.fade {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.home h1 {
+    margin-top: 0px;
+    font-family: Inconsolata;
+    font-size: 56px;
+}
+
+.home h2 {
+    font-weight: 400;
+}
+
+.skills h1 {
+    margin-top: 0px;
+    font-size: 48px;
+}
+
+.skills {
+    display: grid;
+    grid-template: 1fr 6fr / 1fr;
+    
+}
+
+.skills-container {
+    display: flex;
+    height: 38px;
+    justify-content: space-between;
+    padding-right: 100px;
+}
+
+.skill {
+    font-size: 38px;
+    width: 15px;
+}
+
+.skill-description {
+    position: relative;
+    font-size: 24px;
+    padding-bottom: 10px;
+    margin-right: 20px;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+background: #4C3A51;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #E7AB79;
+opacity: 0.8;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #e7b790;
+}
+
+::-webkit-scrollbar-corner {
+background: #4C3A51;
+}
+
+@media only screen and (max-height: 640px)  {
+    .name {
+        padding-top: 50px;
+    }
+    .content {
+        overflow-x:hidden;
+    }
+    .home.content {
+        overflow-y: hidden;
+    }
+}
+
+@media only screen and (max-width: 640px)  {
+    body {
+        padding: 15px 15px 0px 15px;
+        height: 90%;
+    }
+    .name {
+        grid-column: 1 / 4;
+        align-self: center;
+    }
+    .name h1 {
+        font-size: 50px;
+    }
+    .name h2 {
+        margin-bottom: 10px;
+        padding-top: 10px;
+    }
+
+    .name h2, .name h1, .content {
+        text-align: center;
+    }
+    .nav-bar {
+        display: flex;
+        justify-content: space-between;
+        grid-area: 2 / 1 / 3 / 4;
+        padding-bottom: 5px;
+        align-self: flex-start;
+        z-index: 11;
+    }
+    .nav-button {
+        display: inline-block;
+        font-size: 20px;
+        margin-bottom: 0px;
+        align-self:flex-end;
+    }
+    #home-button {
+        width: 56px;
+    }
+    #aboutme-button {
+        width: 92px;
+    }
+    #projects-button {
+        width: 76px;
+    }
+    #skills-button {
+        width: 54px;
+    }
+    .content {
+        grid-area: 2 / 1 / 4 / 4;
+        align-self: center;
+        height: 90%;
+        overflow-x: hidden;
+        margin-top: 70px;
+    }
+
+    .home.content {
+        overflow-y: hidden;
+    }
+    .home {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .home span {
+        align-items: center;
+        display: block;
+    }
+    .content.about-me, .content.projects {
+        padding-right: 10px;
+    
+    }
+    #home-button:hover:after { 
+    width: 56px; 
+    right: 0; 
+    }
+    
+    #aboutme-button:hover:after { 
+    width: 92px; 
+    left: 0; 
+    }
+    
+    #projects-button:hover:after { 
+    width: 76px; 
+    left: 0; 
+    }
+    
+    #skills-button:hover:after { 
+    width: 54px; 
+    left: 0; 
+    }
+
+    .skills-container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow-y: hidden;
+        padding-right: 0px;
+    }
+    
+    .skills h1 {
+        font-size: 24px;
+        height: 100%;
+    }
+
+    .skills.content {
+        width: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 450px) {
+    .name h1 {
+        font-size: 50px;
+    }
+    .nav-bar {
+        width: 100%;
+    }
+    .home h1 {
+        font-size: 42px;
+    }
+}
